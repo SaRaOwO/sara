@@ -4,14 +4,12 @@
     font-family: sans-serif;
 }
 
-.Banner{
-
-    width: 100%;
-    height: 100vh;
+html {
     background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url('../img/Fondo.png');
     background-size: cover;
     background-position: center;
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .navbar{
     width:85%;
@@ -46,6 +44,7 @@
  width: 100%;
 }
 .content{
+    top: 450px;
     width: 100%;
     position: absolute;
     top: 50%;
