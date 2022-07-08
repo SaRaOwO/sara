@@ -10,8 +10,9 @@ html {
     background-attachment: fixed;
 }
 .navbar{
+
     width:85%;
-    margin:auto;
+    margin: auto;
     padding:35px 0;
     display:flex;
     align-items:center;
@@ -41,14 +42,14 @@ html {
 .navbar ul li :hover::after{
  width: 100%;
 }
-.content{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: white;
-
+@media (min-width: 150px ) {
+    
+    .content{
+        margin: 10px;
+        position: absolute;
+        text-align: center;
+        color: white;
+    }
 }
 .content h1 {
     font-size: 70px;
