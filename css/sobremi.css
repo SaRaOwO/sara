@@ -64,6 +64,7 @@ html {
 }
 @media (min-width: 1080px){
     .content{
+        
         width: 100%;
         position: absolute;
         top: 50%;
