@@ -3,7 +3,7 @@
     padding: 0;
 }
 html {
-    background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url('../img/fondoterminos.webp');
+    background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url('../img/Fondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
