@@ -14,7 +14,6 @@ Bienvenido al repositorio del sitio web de SaRa Bot, un proyecto de Discord crea
 - [Página de Inicio](index.html)
 - [Política de Privacidad](privacy-policy.html)
 - [Términos de Uso](terms-of-use.html)
-- [Sobre Mí](sobremi.html)
 - [Redirección para Invitar a SaRa](redireccion.html)
 
 ## Contacto
