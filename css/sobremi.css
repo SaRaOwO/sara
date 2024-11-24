@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html {
+    background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url('../img/Fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+@media (min-width: 150px ) {
+
+
+    .navbar{
+    
+        width:85%;
+        margin: auto;
+        padding:35px 0;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+    
+    .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px 10px;
+        position: relative;
+    }
+    
+    .navbar ul li a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+    .navbar ul li ::after{
+        content: '';
+        height: 3px;
+        width: 0%;
+        background: #D92929;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+    .navbar ul li :hover::after{
+     width: 100%;
+    }
+    }
+.navbar ul li :hover::after{
+ width: 100%;
+}
+@media (min-width: 150px ) {
+    
+    .content{
+        margin: 10px;
+        position: absolute;
+        text-align: center;
+        color: white;
+    }
+}
+@media (min-width: 1080px){
+    .content{
+        
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-30%);
+        text-align: center;
+        color: white;
+    
+    }
+}
+.content h1 {
+    font-size: 50px;
+    margin-top: 60px;
+}
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+.content img {
+    height: 200px;
+}
