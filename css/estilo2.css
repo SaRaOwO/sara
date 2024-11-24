@@ -48,6 +48,8 @@ nav {
 .nav-links a:hover {
     opacity: 0.7;
 }
+
+/* Hero Section */
 .hero {
     height: 100vh;
     background-image: url('/img/modeusa.svg');
@@ -101,6 +103,7 @@ nav {
     color: #0a0a0a;
 }
 
+/* Section Styles */
 .section {
     min-height: 100vh;
     display: flex;
@@ -161,143 +164,109 @@ nav {
     transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero-title {
-        font-size: 48px;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-
-    .content, .section-image {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .section-image {
-        height: 300px;
-        margin-bottom: 30px;
-    }
-
-    .content.right {
-        text-align: left;
-    }
-
-    .section-title {
-        font-size: 36px;
-    }
-
-    .section-text {
-        font-size: 16px;
-    }
-}        .hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-.hero-title {
-    font-size: 72px;
-    font-weight: 300;
-    letter-spacing: 10px;
-    margin-bottom: 30px;
-}
-
-.hero-button {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    padding: 12px 30px;
-    font-size: 18px;
-    letter-spacing: 2px;
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
+    z-index: 1001;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
     transition: all 0.3s ease;
 }
 
-.hero-button:hover {
-    background-color: #fff;
-    color: #0a0a0a;
+/* Animación para el botón de menú móvil */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
-.section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 100px 20px;
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background-color: #0a0a0a;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
+    padding: 10px 0;
 }
 
-.content {
-    max-width: 45%;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-out;
+.close-menu {
+    font-size: 40px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
 }
 
-.content.visible {
-    opacity: 1;
-    transform: translateY(0);
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.content.right {
-    text-align: right;
+.sidebar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+    padding: 10px 0;
 }
 
-.section-title {
-    font-size: 48px;
-    font-weight: 300;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
+.sidebar-links a:hover {
+    opacity: 0.7;
 }
 
-.section-text {
-    color: #999;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-.section-image {
-    width: 45%;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-out;
-}
-
-.section-image.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
     }
 
     .hero-title {
@@ -328,5 +297,10 @@ nav {
 
     .section-text {
         font-size: 16px;
+    }
+
+    .sidebar {
+        width: 100%;
+        right: -100%;
     }
 }

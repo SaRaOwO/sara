@@ -19,6 +19,25 @@
 </head>
 
 <body>
+    <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <div class="logo"></div>
+                <div class="close-menu"></div>
+            </div>
+            <div class="sidebar-links">
+                <a href="https://saraowo.github.io">INICIO</a>
+                <a href="terms-of-use">PRIVACY</a>
+                <a href="https://discord.gg/Yy4CDZYp2t">SOPORT</a>
+            </div>
+        </div>
+    </div>
 
     <body>
         <header>
@@ -83,23 +102,7 @@
             </div>
         </section>
 
-        <script>
-            // Intersection Observer para las animaciones de scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            // Observar todos los elementos de contenido y imágenes
-            document.querySelectorAll('.content, .section-image').forEach((element) => {
-                observer.observe(element);
-            });
-        </script>
+        <script src="/js/sliderbar.js"></script>
     </body>
 
 </html>
