@@ -306,5 +306,14 @@ nav {
 }
 
 body.nsfw-mode .hero {
-    background-image: url('/img/modeusnsfw.svg'); /* Asegúrate de tener esta imagen */
+    height: 100vh;
+    background-image: url('/img/modeusnsfw.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
