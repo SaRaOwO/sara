@@ -304,3 +304,7 @@ nav {
         right: -100%;
     }
 }
+
+body.nsfw-mode .hero {
+    background-image: url('/img/modeusnsfw.svg'); /* Asegúrate de tener esta imagen */
+}
