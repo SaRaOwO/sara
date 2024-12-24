@@ -1,0 +1,23 @@
+name: Deploy HTML
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: API Check
+        env:
+          TOPGG_API: ${{ secrets.topgg_api }}
+        run: echo "Usando token: $TOPGG_API"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
