@@ -1,23 +1,27 @@
-name: Deploy HTML
+name: Deploy Sara Bot Website
 
-on:
+on: 
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   deploy:
+    name: Deploy Website
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
-
-      - name: API Check
+      - uses: actions/checkout@v4
+      
+      - name: Setup Top.gg API
         env:
-          TOPGG_API: ${{ secrets.TOPGG_API }}
-        run: echo "Usando token: $TOPGG_API"
+          TOPGG_API: ${{ secrets.topgg_api }}
+        run: |
+          echo "Configurando token de Top.gg"
+          echo "TOPGG_API=$TOPGG_API" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
+          enable_jekyll: false
