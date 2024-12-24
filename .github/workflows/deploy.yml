@@ -14,7 +14,7 @@ jobs:
       
       - name: Setup Top.gg API
         env:
-          TOPGG_API: ${{ secrets.topgg_api }}
+          TOPGG_API: ${{ secrets.TOPGG_API }}
         run: |
           echo "Configurando token de Top.gg"
           echo "TOPGG_API=$TOPGG_API" >> $GITHUB_ENV
