@@ -13,7 +13,7 @@ jobs:
 
       - name: API Check
         env:
-          TOPGG_API: ${{ secrets.topgg_api }}
+          TOPGG_API: ${{ secrets.TOPGG_API }}
         run: echo "Usando token: $TOPGG_API"
 
       - name: Deploy to GitHub Pages
