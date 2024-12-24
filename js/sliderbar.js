@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     menuToggle.addEventListener('click', toggleMenu);
-
     closeMenu.addEventListener('click', toggleMenu);
 
     // Cerrar menú cuando se hace clic fuera
@@ -25,19 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 // Animación de aparición de contenido (sin cambios)
 document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
             }
         });
     }, {
         threshold: 0.1
     });
 
-    document.querySelectorAll('.content, .section-image').forEach((element) => {
+    document.querySelectorAll('.content, .section-image, .info-boxes').forEach((element) => {
         observer.observe(element);
     });
 });

@@ -3,6 +3,70 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Contenedor de las cajas */
+.info-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.info-boxes.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+/* Estilo base de las cajas */
+.info-box {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 6px rgba(58, 31, 31, 0.3);
+    text-align: center;
+    color: #fff;
+    width: 45%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.5s ease;
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+/* Animación de aparición */
+.info-boxes.visible .info-box {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+/* Título de las cajas */
+.info-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Enlace dentro de las cajas */
+.info-box a {
+    color: #cf131f;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.info-box a:hover {
+    color: #fff;
+}
+
+/* Efecto hover en las cajas */
+.info-box:hover {
+    transform: scale(1.05); /* Escala la caja al 105% de su tamaño original */
+    box-shadow: 0 15px 30px rgba(207, 19, 19, 0.8); /* Sombra más intensa y de color rojo */
+}
+
 
 body {
     font-family: Arial, sans-serif;
@@ -261,6 +325,28 @@ nav {
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .info-boxes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .info-box {
+        flex: 1; 
+        margin: 10px; 
+        max-width: calc(50% - 20px); 
+        box-sizing: border-box; 
+    }
+    
+    .info-box h3 {
+        font-size: 14px;
+    }
+    
+    .info-box a {
+        font-size: 14px;
+    }
     .nav-links {
         display: none;
     }
@@ -303,6 +389,7 @@ nav {
         width: 100%;
         right: -100%;
     }
+    
 }
 
 body.nsfw-mode .hero {
