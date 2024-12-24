@@ -64,7 +64,7 @@
 /* Efecto hover en las cajas */
 .info-box:hover {
     transform: scale(1.05); /* Escala la caja al 105% de su tamaño original */
-    box-shadow: 0 15px 30px rgba(207, 19, 19, 0.8); /* Sombra más intensa y de color rojo */
+    box-shadow: 0 10px 20px rgba(207, 19, 19, 0.8); /* Sombra más intensa y de color rojo */
 }
 
 
