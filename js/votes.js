@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const API_KEY = process.env.TOPGG_API;
 const BOT_ID = '868957277623824384';
 
