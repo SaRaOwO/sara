@@ -327,9 +327,56 @@ nav {
 .sidebar-links a:hover {
     opacity: 0.7;
 }
+.login-container {
+    background-color: #1c1c1c; /* Fondo oscuro para el contenedor de login */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 6px rgba(58, 31, 31, 0.3);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.login-description {
+    color: #999;
+    margin-bottom: 2rem;
+}
+
+.discord-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #5865F2;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.discord-button:hover {
+    background-color: #4752c4;
+    transform: scale(1.05);
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .login-container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+    }
     .info-boxes {
         display: flex;
         flex-direction: row;
