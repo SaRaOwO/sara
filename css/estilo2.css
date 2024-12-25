@@ -56,7 +56,12 @@
     font-size: 16px;
     transition: color 0.3s ease;
 }
-
+.info-box img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 .info-box a:hover {
     color: #fff;
 }
