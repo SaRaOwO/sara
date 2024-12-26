@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+    <script>
+        // Obtener el código de autorización de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        if (code) {
+            // Redirigir a la aplicación local con el código de autorización
+            window.location.href = `http://127.0.0.1:5000/callback?code=${code}`;
+        } else {
+            document.body.innerHTML = 'No se proporcionó ningún código de autorización.';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirigiendo...</p>
+</body>
+</html>
