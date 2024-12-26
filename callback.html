@@ -10,7 +10,7 @@
         const code = urlParams.get('code');
         if (code) {
             // Redirigir a la aplicación local con el código de autorización
-            window.location.href = `http://127.0.0.1:5000/callback?code=${code}`;
+            window.location.href = `https://callbacksara.onrender.com/callback?code=${code}`;
         } else {
             document.body.innerHTML = 'No se proporcionó ningún código de autorización.';
         }
