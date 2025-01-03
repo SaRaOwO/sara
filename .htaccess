@@ -1,11 +1,20 @@
 RewriteEngine On
 
-# Si el archivo o directorio no existe, redirigir a la carpeta html
+# Redireccionar a archivos HTML sin mostrar la extensión
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /html/$1 [L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
 
-# Asegurar que las URLs terminen con una barra
+# Redireccionar peticiones a la carpeta html sin mostrarla en la URL
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
-RewriteRule (.*)$ /$1/ [R=301,L]
+RewriteRule ^([^/]+)/?$ /html/$1.html [L]
+
+# Prevenir acceso directo a la carpeta html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+html/([^/]\S*) [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Remover .html de las URLs
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]

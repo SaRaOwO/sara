@@ -10,3 +10,4 @@ infoBoxes.forEach(box => {
         }
     });
 });
+
