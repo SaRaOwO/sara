@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SaRa</title>  
-    <link rel="stylesheet" href="css/estilo2.css">
+    <title>SaRa</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="/img/iconModeus.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#cf131f" />
     <meta property="og:title" content="SaRa Bot">
     <meta property="og:description" content="Sara bot de discord de rolplay, anime y interaccion">
     <meta property="og:image" content="/img/icons/banner.svg">
+    <!-- fuentes de texto    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
     <meta property="og:url" content="https://evergasterxd.github.io/saraweb">
     <meta property="og:type" content="website">
+    <!-- scripts de la pagina -->
     <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9227370820145486"
-crossorigin="anonymous"></script>
-    
-  </head>
-  <body>
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black text-white leading-relaxed font-[Arimo]">
     <div class="mobile-menu-toggle">
         <span></span>
         <span></span>
@@ -28,114 +37,136 @@ crossorigin="anonymous"></script>
     <div class="sidebar">
         <div class="sidebar-content">
             <div class="sidebar-header">
-                <div class="logo"></div>
-                <div class="close-menu"></div>
+                <div class="logo">SR</div>
+
             </div>
             <div class="sidebar-links">
-                <a href="privacy-policy">PRIVACY</a>
-                <a href="terms-of-use">TERM USE</a>
+                <a href="/html/privacy-policy">PRIVACY</a>
+                <a href="/html/terms-of-use">TERM USE</a>
                 <a href="https://discord.gg/Yy4CDZYp2t">SOPORT</a>
                 <a href="https://top.gg/bot/868957277623824384/vote">VOTE</a>
             </div>
         </div>
     </div>
 
-    <header>
-        <nav>
-            <div class="logo">SR</div>
-            <div class="nav-links">
-                <a href="privacy-policy">PRIVACY</a>
-                <a href="terms-of-use">TERM USE</a>
-                <a href="https://discord.gg/Yy4CDZYp2t">SOPORT</a>
-                <a href="https://top.gg/bot/868957277623824384/vote">VOTE</a>
+    <header class="fixed w-full p-[20px] z-50 bg-gradient-to-b from-black/80 to-transparent">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <div class="text-2xl font-light">SR</div>
+            <div class="flex gap-[34px]">
+                <a class="text-white no-underline text-[14px] tracking-normal ease-opacity-30 hover:opacity-70"
+                    href="privacy-policy">PRIVACY</a>
+                <a class="text-white no-underline text-[14px] tracking-normal ease-opacity-30 hover:opacity-70"
+                    href="terms-of-use">TERM USE</a>
+                <a class="text-white no-underline text-[14px] tracking-normal ease-opacity-30 hover:opacity-70"
+                    href="https://discord.gg/Yy4CDZYp2t">SOPORT</a>
+                <a class="text-white no-underline text-[14px] tracking-normal ease-opacity-30 hover:opacity-70"
+                    href="https://top.gg/bot/868957277623824384/vote">VOTE</a>
             </div>
         </nav>
     </header>
 
-    <section class="section hero">
-        <div class="hero-content">
-            <h1 id="sara" class="hero-title">SARA</h1>
+    <section id='hero'
+        class="relative h-screen bg-[url('./img/modeusa.svg')] bg-contain bg-no-repeat bg-left-center flex flex-col justify-center items-center">
+        <div class="absolute top-0 left-0 w-full h-full bg-black/50 z-0"></div>
+        <div class="relative z-10 text-center">
+            <h1 id="sara" class="text-7xl font-light tracking-[10px] mb-8 md: text-5xl">SARA</h1>
             <a href="redireccion">
-                <button class="hero-button">INVITAR</button>
+                <button
+                    class="bg-transparent border-2 border-white text-white px-6 py-3 text-lg tracking-widest transition duration-300 ease-in-out hover:bg-white hover:text-black">
+                    INVITAR
+                </button>
             </a>
-            
         </div>
     </section>
 
-    <div class="info-boxes">
-        <div class="info-box">
-            <h3>Votos</h3>
-            <p id="voteCount">0</p>
-        </div>
-        <div class="info-box" data-url="https://github.com/Evergaster/SaRaBoT.py">
-            <h3>Repositorio</h3>
-            <img src="/img/icons/github-mark-white.svg" alt="github">
+    <div class="info-boxes-container">
+        <div
+            class="info-boxes flex justify-around my-5 opacity-0 transform translate-y-5 transition-opacity transition-transform duration-500 ease-in-out">
+            <div
+                class="info-box p-5 rounded-lg shadow-[0px_5px_6px_rgba(58,31,31,0.3)] text-center text-white w-[45%] cursor-pointer opacity-0 transform translate-y-5 transition-all duration-500 ease-in-out relative overflow-hidden hover:scale-105 hover:shadow-[0px_10px_20px_rgba(207,19,19,0.8)] bg-[#1c1c1c] md: flex-1 m-2 max-w-[calc(50%-20px)] box-border">
+                <h3 class="text-2xl mb-3 md: text-sm">Votos</h3>
+                <p id="voteCount" class="text-xl">0</p>
+            </div>
+            <div class="info-box p-5 rounded-lg shadow-[0px_5px_6px_rgba(58,31,31,0.3)] text-center text-white w-[45%] cursor-pointer opacity-0 transform translate-y-5 transition-all duration-500 ease-in-out relative overflow-hidden hover:scale-105 hover:shadow-[0px_10px_20px_rgba(207,19,19,0.8)] bg-[#1c1c1c] md: flex-1 m-2 max-w-[calc(50%-20px)] box-border"
+                data-url="https://github.com/Evergaster/SaRaBoT.py">
+                <h3 class="text-2xl mb-3 md: text-sm">Repositorio</h3>
+                <div class="flex justify-center items-center">
+                    <img src="/img/icons/github-mark-white.svg" alt="github" class="w-12 h-12 object-cover rounded-md">
+                </div>
+            </div>
         </div>
     </div>
-    
-    <section class="section">
-        <div class="container">
-            <div class="content">
-                <h2 id="sobre-mi" class="section-title">Sobre Mi</h2>
-                <p>SaRa es un proyecto que nació el 25 de julio de 2021, creado por
-                EverGaster#7163. Lo que comenzó como una forma de entretenimiento
-                durante la pandemia para un grupo de amigos, se transformó en un
-                proyecto público que ha conectado a personas de diferentes lugares y
-                creado una comunidad increíble en el camino.</p>
+
+
+    <section class="min-h-screen flex py-24 px-5">
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center">
+            <div class="content w-full md:w-1/2">
+                <h2 id="sobre-mi" class="text-3xl md:text-5xl font-light mb-8 tracking-[2px]">Sobre Mi</h2>
+                <p class="text-base">SaRa es un proyecto que nació el 25 de julio de 2021, creado por
+                    EverGaster#7163. Lo que comenzó como una forma de entretenimiento
+                    durante la pandemia para un grupo de amigos, se transformó en un
+                    proyecto público que ha conectado a personas de diferentes lugares y
+                    creado una comunidad increíble en el camino.</p>
             </div>
-            <div class="section-image" style="background-image: url('/img//icons/720_2.webp');">
+            <div class="section-image w-full md:w-2/5 h-[300px] md:h-[400px] bg-cover bg-center opacity-0 translate-y-[30px] transition-all duration-1000 ease-out mb-8 md:mb-0"
+                style="background-image: url('/img//icons/720_2.webp');">
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-image" style="background-image: url('/img/icons/beelzebub-cute.webp');">
+    <section class="min-h-screen flex py-24 px-5">
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center">
+            <div class="section-image w-full md:w-2/5 h-[300px] md:h-[400px] bg-cover bg-center opacity-0 translate-y-[30px] transition-all duration-1000 ease-out mb-8 md:mb-0"
+                style="background-image: url('/img/icons/beelzebub-cute.webp');">
             </div>
-            <div class="content right">
-                <h2 id="porque-usar-sara" class="section-title">¿porque usar SaRa?</h2>
-                <p>SaRa está diseñada pensando en ti. Su uso es intuitivo y sencillo,
-                permitiéndote disfrutar de todas sus funciones sin complicaciones.
-                Queremos que tu experiencia sea lo más fluida y agradable posible.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="content">
-                <h2 id="seguridad-y-confianza" class="section-title">seguridad y confianza</h2>
-                <p>Tu privacidad es nuestra prioridad. SaRa no solicita información
-                sensible como usuario o contraseña, y todos los datos recolectados son
-                completamente privados. Tú eres el único que puede acceder a ellos.</p>
-            </div>
-            <div class="section-image" style="background-image: url('/img/icons/F826A71F-F31C-4E1D-90B2-A7ED3645967A.webp');">
+            <div class="content text-right w-full md:w-1/2 text-left">
+                <h2 id="porque-usar-sara" class="text-3xl md:text-5xl font-light mb-8 tracking-[2px]">¿porque usar SaRa?
+                </h2>
+                <p class="text-base">SaRa está diseñada pensando en ti. Su uso es intuitivo y sencillo,
+                    permitiéndote disfrutar de todas sus funciones sin complicaciones.
+                    Queremos que tu experiencia sea lo más fluida y agradable posible.</p>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-image" style="background-image: url('/img/icons/modeus.webp');">
+    <section class="min-h-screen flex py-24 px-5">
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center">
+            <div class="content w-full md:w-1/2">
+                <h2 id="seguridad-y-confianza" class="text-3xl md:text-5xl font-light mb-8 tracking-[2px]">seguridad y
+                    confianza</h2>
+                <p class="text-base">Tu privacidad es nuestra prioridad. SaRa no solicita información
+                    sensible como usuario o contraseña, y todos los datos recolectados son
+                    completamente privados. Tú eres el único que puede acceder a ellos.</p>
             </div>
-            <div class="content right">
-                <h2 id="porque-usar-sara" class="section-title">¡Vota en Top.gg!</h2>
-                <p>¡Buenas noticias! Nuestro bot ya se encuentra de nuevo en Top.gg. Ayúdanos a crecer aún más votando por nosotros. ¡Tu apoyo es crucial para que sigamos mejorando y ofreciendo nuevas funcionalidades! ¡Gracias por tu voto!</p>
+            <div class="section-image w-full md:w-2/5 h-[300px] md:h-[400px] bg-cover bg-center opacity-0 translate-y-[30px] transition-all duration-1000 ease-out mb-8 md:mb-0"
+                style="background-image: url('/img/icons/F826A71F-F31C-4E1D-90B2-A7ED3645967A.webp');">
             </div>
         </div>
     </section>
 
-     <!-- scripts de la pagina -->
+    <section class="min-h-screen flex py-24 px-5">
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center">
+            <div class="section-image w-full md:w-2/5 h-[300px] md:h-[400px] bg-cover bg-center opacity-0 translate-y-[30px] transition-all duration-1000 ease-out mb-8 md:mb-0"
+                style="background-image: url('/img/icons/modeus.webp');">
+            </div>
+            <div class="content text-right w-full md:w-1/2 text-left">
+                <h2 id="porque-usar-sara" class="text-3xl md:text-5xl font-light mb-8 tracking-[2px]">¡Vota en Top.gg!
+                </h2>
+                <p class="text-base">¡Buenas noticias! Nuestro bot ya se encuentra de nuevo en Top.gg. Ayúdanos a crecer
+                    aún más votando por nosotros. ¡Tu apoyo es crucial para que sigamos mejorando y ofreciendo nuevas
+                    funcionalidades! ¡Gracias por tu voto!</p>
+            </div>
+        </div>
+    </section>
+    <!-- scripts de la pagina -->
     <script src="/js/sliderbar.js"></script>
     <script src="/js/nsfw.js"></script>
     <script src="/js/votes.js"></script>
     <script src="/js/div-url.js"></script>
-    
+
     <!--
     Evergaster - 2024
-
 -->
-        <!-- sanuncios de google-->
-
 </body>
+
 </html>
