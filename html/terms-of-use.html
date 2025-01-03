@@ -14,11 +14,16 @@
     <meta property="og:url" content="https://saraowo.github.io/privacy-policy">
     <meta property="og:type" content="website">
     <title>SaRa | Política de privacidad</title>
-    <link rel="stylesheet" href="/css/estilo2.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/img/iconModeus.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
 </head>
 
-<body>
+<body class="bg-black text-white leading-relaxed ">
     <div class="mobile-menu-toggle">
         <span></span>
         <span></span>
@@ -40,28 +45,25 @@
         </div>
     </div>
 
-    <body>
-        <header>
-            <nav>
-                <div class="logo">SR</div>
-                <div class="nav-links">
-                    <a href="https://saraowo.github.io">INICIO</a>
-                    <a href="terms-of-use">PRIVACY</a>
-                    <a href="https://discord.gg/Yy4CDZYp2t">SOPORT</a>
-                    <a href="https://top.gg/bot/868957277623824384/vote">VOTE</a>
+        <header class="fixed w-full p-[20px] z-50 bg-gradient-to-b from-black/80 to-transparent font-[Arimo]">
+            <nav class="flex justify-between items-center max-w-6xl mx-auto">
+                <div class="text-2xl font-light">SR</div>
+                <div class="flex gap-[34px]">
+                    <a class="text-white no-underline text-[14px] tracking-normal ease-opacity-30 hover:opacity-70" href="https://saraowo.github.io">INICIO</a>
+                    <a class="text-white no-underline text-[14px] tracking-normal ease-opacity-30 hover:opacity-70" href="terms-of-use">PRIVACY</a>
+                    <a class="text-white no-underline text-[14px] tracking-normal ease-opacity-30 hover:opacity-70" href="https://discord.gg/Yy4CDZYp2t">SOPORT</a>
+                    <a class="text-white no-underline text-[14px] tracking-normal ease-opacity-30 hover:opacity-70" href="https://top.gg/bot/868957277623824384/vote">VOTE</a>
                 </div>
             </nav>
         </header>
 
 
 
-        <section class="section"
-            style="display: flex; justify-content: center; align-items: center; text-align: center;">
-            <div class="container"
-                style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <div class="content" style="max-width: 800px;">
-                    <h2 class="section-title">Términos y condiciones de uso</h2>
-                    <p class="section-text">
+        <section class="flex justify-center items-center text-center min-h-screen flex py-1 px-5">
+            <div class="flex justify-center items-center flex-col">
+                <div class="max-w-[800px]">
+                    <h2 class="text-3xl md:text-5xl font-light mb-8 tracking-[2px]">Términos y condiciones de uso</h2>
+                    <p class="text-base">
                     <p>Al usar el servicio que la bot "<i>SaRa</i>" brinda, usted acepta los términos y condiciones de
                         uso de la misma.</p>
                     <p>Usted tiene prohibido robar la clave Token de la bot, en caso de hacerlo, usted será añadido a la
@@ -79,13 +81,11 @@
             </div>
         </section>
 
-        <section class="section"
-            style="display: flex; justify-content: center; align-items: center; text-align: center;">
-            <div class="container"
-                style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <div class="content" style="max-width: 800px;">
-                    <h2 class="section-title">Referencias</h2>
-                    <p class="section-text">
+        <section class="flex justify-center items-center text-center min-h-[10vh] flex px-5">
+            <div class="flex justify-center items-center flex-col">
+                <div class="max-w-[800px]">
+                    <h2 class="text-3xl md:text-5xl font-light mb-8 tracking-[2px]">Referencias</h2>
+                    <p class="text-base">
                     <ol>
                         <li>Lista de países cuyas leyes se deben de respetar durante el uso de la bot:</li>
                         <ul>

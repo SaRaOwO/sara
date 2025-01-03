@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     });
 
-    document.querySelectorAll('.content, .section-image, .info-boxes').forEach((element) => {
+    document.querySelectorAll('.content, .section-image, .info-boxes-container').forEach((element) => {
         observer.observe(element);
     });
 });
